@@ -7,6 +7,7 @@ export default new Router({
     {
       path: "/",
       component: () => import("@/view/home/index"),
+      redirect: "/goods",
       children: [
         {
           path: "user",
@@ -17,7 +18,7 @@ export default new Router({
           path: "goods",
           name: "goods",
           component: () => import("@/view/goods/goods")
-        },
+        }
       ]
     }
   ]

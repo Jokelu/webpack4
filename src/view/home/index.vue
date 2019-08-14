@@ -72,11 +72,9 @@ export default {
       ]
     };
   },
-  computed() {
-
+  computed: {
   },
   mounted() {
-    console.log(this.$router)
     // axios
     //   .get("/api/deleteUser", {
     //     params: {
