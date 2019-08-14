@@ -1,31 +1,31 @@
 <!--  -->
 <template>
   <el-menu :default-active="$route.path" router class="sub-menus" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-    <sub-menu :data="item" v-for="(item) in data" :key="item.id"></sub-menu>
+    <sub-menu v-for="(item) in data" :key="item.id" :data="item" />
   </el-menu>
 </template>
 
 <script>
-import SubMenu from "./submenu";
+import SubMenu from './submenu'
 export default {
-  data() {
-    return {};
+  components: {
+    SubMenu
   },
   props: {
     data: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     }
   },
-  components: {
-    SubMenu
+  data() {
+    return {}
   },
   created() {},
 
   methods: {}
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>

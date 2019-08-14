@@ -1,10 +1,9 @@
-<!--  -->
 <template>
   <div>
     <el-card>
       <div slot="header">
-        <div>{{getname}}</div>
-        <el-form ref="form" :model="listQuery" class="form" label-width="120px">
+        <div>{{ getname }}</div>
+        <el-form ref="form" v-model="listQuery" class="form" label-width="120px">
           <el-row :gutter="100">
             <el-col :span="8">
               <el-form-item label="广告ID：">
@@ -25,9 +24,15 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-button type="primary" @click="handleFilter()">搜索</el-button>
-              <el-button @click="onReset">条件重置</el-button>
-              <el-button type="success" @click="onAdd">创建广告</el-button>
+              <el-button type="primary" @click="handleFilter()">
+                搜索
+              </el-button>
+              <el-button @click="onReset">
+                条件重置
+              </el-button>
+              <el-button type="success" @click="onAdd">
+                创建广告
+              </el-button>
               <!-- <el-button type="success" @click="onAdd">分类管理</el-button> -->
             </el-col>
           </el-row>
@@ -38,9 +43,8 @@
 </template>
 
 <script>
-import axios from "axios";
 
-import { getUserList, login } from "@/api/index";
+import { getUserList } from '@/api/index'
 export default {
   data() {
     return {
@@ -49,38 +53,38 @@ export default {
       cities: [],
       treeData: [],
       props: {}
-    };
-  },
-  created() {
-    this.initData();
+    }
   },
   computed: {
     getname: function(params) {
-      return this.$store.getters["user/getname"];
+      return this.$store.getters['user/getname']
     }
+  },
+  created() {
+    this.initData()
   },
   methods: {
     async initData() {
-      this.$store.commit("user/SET_NAME", "meimei");
+      this.$store.commit('user/SET_NAME', 'meimei')
       this.$store
-        .dispatch("user/login", {
-          username: "admin",
+        .dispatch('user/login', {
+          username: 'admin',
           password: 111111
         })
         .then(() => {})
-        .catch(() => {});
+        .catch(() => {})
     },
     handleUpdate() {},
     handleCheck() {},
     handleDelete() {},
-    handleFilter() {},
+    handleFilter(a) {},
     onAdd() {
       // this.$router.push(`advertManageEdit`);
     },
     onReset() {},
     getTime() {}
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>

@@ -1,20 +1,20 @@
 <!--  -->
 <template>
-  <div></div>
+  <div />
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   created() {
-    this.test();
+    this.test()
   },
 
   methods: {
     test() {
-      const obj = {};
+      // const obj = {}
       // Object.defineProperties(obj, {
       //   name: {
       //     value: true,
@@ -29,7 +29,7 @@ export default {
       // console.log(obj);
     }
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>

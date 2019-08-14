@@ -1,9 +1,9 @@
 
-import {login} from "@/api/index";
+import { login } from '@/api/index'
 const user = {
   namespaced: true,
   state: {
-    name:'dada',
+    name: 'dada',
     token: ''
   },
   // 对于模块内部的 mutation 和 getter，接收的第一个参数是模块的局部状态对象。
@@ -16,13 +16,13 @@ const user = {
     }
   },
   actions: {
-    login({commit},userinfo) {
-      return new Promise((resolve, reject)=> {
+    login({ commit }, userinfo) {
+      return new Promise((resolve, reject) => {
         login(userinfo).then((result) => {
           console.log(result)
         }).catch((err) => {
           console.log(err)
-        });
+        })
       })
     }
   },

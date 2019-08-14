@@ -1,0 +1,4 @@
+build/*.js
+dist
+config/*.js
+src/assets

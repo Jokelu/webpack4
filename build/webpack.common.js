@@ -33,6 +33,17 @@ module.exports = {
         }
       },
       {
+        test: /\.(js|vue)$/,
+        loader: "eslint-loader",
+        enforce: "pre",
+        //指定检查的目录
+        include: [path.resolve(__dirname, "src")],
+        //eslint检查报告的格式规范
+        options: {
+          formatter: require("eslint-friendly-formatter")
+        }
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },

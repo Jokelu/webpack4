@@ -2,8 +2,8 @@
 <template>
   <div style="margin-top:20px;min-height:">
     <el-table
-      v-loading="loading"
       ref="table"
+      v-loading="loading"
       :data="tableData"
       :fit="fit"
       :stripe="stripe"
@@ -59,7 +59,7 @@ export default {
     pageSize: {
       type: Array,
       default: function() {
-        return [10, 20, 30, 50];
+        return [10, 20, 30, 50]
       },
       required: false
     },
@@ -69,7 +69,7 @@ export default {
       default() {
         return {
           query: {}
-        };
+        }
       },
       required: false
     }
@@ -82,52 +82,52 @@ export default {
       limit: 10,
       offset: 0,
       loading: false
-    };
+    }
   },
   computed: {},
   created() {
-    this.getData();
+    this.getData()
   },
 
   methods: {
     async getData() {
-      var params = this.params;
-      params.pageNum = this.currentPage;
-      params.pageSize = this.limit;
-      this.reload = false;
-      this.loading = true;
-      const result = await this.searchApi();
-      this.tableData = result.data.data || [];
-      this.count = result.data.data.total || 0;
-      this.reload = true;
-      this.loading = false;
+      var params = this.params
+      params.pageNum = this.currentPage
+      params.pageSize = this.limit
+      this.reload = false
+      this.loading = true
+      const result = await this.searchApi()
+      this.tableData = result.data.data || []
+      this.count = result.data.data.total || 0
+      this.reload = true
+      this.loading = false
     },
     /* 页码数量变化*/
     handleSizeChange(val) {
-      this.limit = val;
+      this.limit = val
       // this.getData();
     },
     /* 当前页变化事件*/
     handleCurrentChange(val) {
-      this.currentPage = val;
-      this.offset = (val - 1) * this.limit;
-      this.getData();
+      this.currentPage = val
+      this.offset = (val - 1) * this.limit
+      this.getData()
     },
     // 排序事件
     sortChange(data) {
       if (!data.order) {
-        this.params.query["sortField"] = "";
-        this.params.query["sortType"] = "";
-        this.getData();
-        return;
+        this.params.query['sortField'] = ''
+        this.params.query['sortType'] = ''
+        this.getData()
+        return
       }
-      this.params.query["sortField"] = data.prop;
-      this.params.query["sortType"] =
-        data.order === "ascending" ? "ASC" : "DESC";
-      this.getData();
+      this.params.query['sortField'] = data.prop
+      this.params.query['sortType'] =
+        data.order === 'ascending' ? 'ASC' : 'DESC'
+      this.getData()
     }
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 </style>

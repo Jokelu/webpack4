@@ -1,76 +1,77 @@
 <!--  -->
 <template>
   <div class="container">
-    <header class="header">Header</header>
+    <header class="header">
+      Header
+    </header>
     <div class="content">
       <div class="aside">
-        <lf-menu :data="menu" style="width:100%"></lf-menu>
+        <lf-menu :data="menu" style="width:100%" />
       </div>
       <div class="main">
-        <router-view></router-view>
+        <router-view />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
       tableData: [
         {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
         },
         {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
         },
         {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
         },
         {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
         }
       ],
       menu: [
         {
-          id: "1",
-          name: "用户管理",
+          id: '1',
+          name: '用户管理',
           path: null,
-          icon: "el-icon-menu",
+          icon: 'el-icon-menu',
           children: [
             {
-              id: "2",
-              path: "/user",
-              name: "用户列表",
-              icon: ""
+              id: '2',
+              path: '/user',
+              name: '用户列表',
+              icon: ''
             }
           ]
         },
         {
-          id: "3",
+          id: '3',
           path: null,
-          name: "商品管理",
-          icon: "el-icon-menu",
+          name: '商品管理',
+          icon: 'el-icon-menu',
           children: [
             {
-              id: "4",
-              path: "/goods",
-              name: "商品列表",
-              icon: ""
+              id: '4',
+              path: '/goods',
+              name: '商品列表',
+              icon: ''
             }
           ]
         }
       ]
-    };
+    }
   },
   computed: {
   },
@@ -106,7 +107,7 @@ export default {
   },
 
   methods: {}
-};
+}
 </script>
 <style lang='scss'>
 .container {

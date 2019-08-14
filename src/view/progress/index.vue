@@ -1,19 +1,25 @@
 <!--  -->
 <template>
   <div class="love">
-    <div class="label">DownLoading LOVE from you</div>
+    <div class="label">
+      DownLoading LOVE from you
+    </div>
     <el-progress
       class="progress"
       :text-inside="true"
       :stroke-width="18"
       :percentage="progress"
       status="exception"
-    ></el-progress>
-    <div class="label">Estimated time left: Unknown</div>
-    <div class="label">Download to: my heart</div>
+    />
+    <div class="label">
+      Estimated time left: Unknown
+    </div>
+    <div class="label">
+      Download to: my heart
+    </div>
     <div class="fall">
       爱你，
-      <br />我越陷越深......
+      <br>我越陷越深......
     </div>
   </div>
 </template>
@@ -23,19 +29,19 @@ export default {
   data() {
     return {
       progress: 0
-    };
+    }
   },
   created() {
-    let time = setInterval(() => {
-      this.progress += 1;
-      if (this.progress == 99) {
-        clearInterval(time);
+    const time = setInterval(() => {
+      this.progress += 1
+      if (this.progress === 99) {
+        clearInterval(time)
       }
-    }, 1000);
+    }, 1000)
   },
 
   methods: {}
-};
+}
 </script>
 <style lang='scss' scoped>
 .love {
